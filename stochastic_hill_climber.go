@@ -20,7 +20,7 @@ func (shc *StochasticHillClimber) Train(cortex *ng.Cortex, scape Scape) (resultN
 
 	numAttempts := 0
 
-	fittestNeuralNet := cortex
+	fittestNeuralNet := cortex.Copy()
 	resultNeuralNet = cortex
 
 	// Apply NN to problem and save fitness
@@ -53,7 +53,6 @@ func (shc *StochasticHillClimber) Train(cortex *ng.Cortex, scape Scape) (resultN
 			fittestNeuralNet = candidateNeuralNet
 			resultNeuralNet = candidateNeuralNet.Copy()
 			fitness = candidateFitness
-
 		}
 
 		if candidateFitness > shc.FitnessThreshold {
