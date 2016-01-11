@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/couchbaselabs/logg"
 	ng "github.com/maxxk/neurgo"
-	nv "github.com/tleyden/neurvolve"
+	nv "github.com/maxxk/neurvolve"
 	"math"
 	"time"
 )
