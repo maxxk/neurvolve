@@ -51,7 +51,7 @@ func (shc *StochasticHillClimber) Train(cortex *ng.Cortex, scape Scape) (resultN
 			logg.LogTo("MAIN", "i: %v candidateFitness: %v > fitness: %v", i, candidateFitness, fitness)
 			i = 0
 			fittestNeuralNet = candidateNeuralNet
-			resultNeuralNet = candidateNeuralNet
+			resultNeuralNet = candidateNeuralNet.Copy()
 			fitness = candidateFitness
 
 		}
