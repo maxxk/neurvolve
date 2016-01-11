@@ -67,7 +67,7 @@ func (tmt *TopologyMutatingTrainer) Train(cortex *ng.Cortex, scape Scape) (fitte
 		logg.LogTo("MAIN", "Run stochastic hill climber..")
 
 		// memetic step: call stochastic hill climber and see if it can solve it
-		fittestCortex, succeeded = shc.Train(currentCortex, scape)
+		fittestCortex, _, succeeded = shc.Train(currentCortex, scape)
 		logg.LogTo("MAIN", "stochastic hill climber finished.  succeeded: %v", succeeded)
 
 		if succeeded {

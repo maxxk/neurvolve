@@ -14,16 +14,17 @@ type StochasticHillClimber struct {
 	WeightSaturationRange      []float64
 }
 
-func (shc *StochasticHillClimber) Train(cortex *ng.Cortex, scape Scape) (fittestNeuralNet *ng.Cortex, succeeded bool) {
+func (shc *StochasticHillClimber) Train(cortex *ng.Cortex, scape Scape) (resultNeuralNet *ng.Cortex, fitness float64, succeeded bool) {
 
 	shc.validate()
 
 	numAttempts := 0
 
-	fittestNeuralNet = cortex
+	fittestNeuralNet := cortex
+	resultNeuralNet = cortex
 
 	// Apply NN to problem and save fitness
-	fitness := scape.Fitness(fittestNeuralNet)
+	fitness = scape.Fitness(fittestNeuralNet)
 	logg.LogTo("MAIN", "Initial fitness: %v", fitness)
 
 	if fitness > shc.FitnessThreshold {
@@ -50,6 +51,7 @@ func (shc *StochasticHillClimber) Train(cortex *ng.Cortex, scape Scape) (fittest
 			logg.LogTo("MAIN", "i: %v candidateFitness: %v > fitness: %v", i, candidateFitness, fitness)
 			i = 0
 			fittestNeuralNet = candidateNeuralNet
+			resultNeuralNet = candidateNeuralNet
 			fitness = candidateFitness
 
 		}
@@ -79,7 +81,7 @@ func (shc *StochasticHillClimber) Train(cortex *ng.Cortex, scape Scape) (fittest
 
 }
 
-func (shc *StochasticHillClimber) TrainExamples(cortex *ng.Cortex, examples []*ng.TrainingSample) (fittestNeuralNet *ng.Cortex, succeeded bool) {
+func (shc *StochasticHillClimber) TrainExamples(cortex *ng.Cortex, examples []*ng.TrainingSample) (fittestNeuralNet *ng.Cortex, fitness float64, succeeded bool) {
 
 	trainingSampleScape := &TrainingSampleScape{
 		examples: examples,
