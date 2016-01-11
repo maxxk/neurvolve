@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/couchbaselabs/go.assert"
 	"github.com/couchbaselabs/logg"
-	ng "github.com/tleyden/neurgo"
+	ng "github.com/maxxk/neurgo"
 	"log"
 	"testing"
 )

@@ -2,7 +2,7 @@ package neurvolve
 
 import (
 	"fmt"
-	ng "github.com/tleyden/neurgo"
+	ng "github.com/maxxk/neurgo"
 )
 
 // A Cortex along with other data

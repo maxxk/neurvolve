@@ -5,7 +5,7 @@ import (
 	"fmt"
 	_ "github.com/couchbaselabs/logg"
 	"github.com/gorilla/mux"
-	ng "github.com/tleyden/neurgo"
+	ng "github.com/maxxk/neurgo"
 	"net/http"
 	"time"
 )

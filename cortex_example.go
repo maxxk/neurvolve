@@ -1,7 +1,7 @@
 package neurvolve
 
 import (
-	ng "github.com/tleyden/neurgo"
+	ng "github.com/maxxk/neurgo"
 )
 
 func SingleNeuronCortex(uuid string) *ng.Cortex {

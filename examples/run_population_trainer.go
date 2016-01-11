@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/couchbaselabs/logg"
-	ng "github.com/tleyden/neurgo"
+	ng "github.com/maxxk/neurgo"
 	nv "github.com/tleyden/neurvolve"
 	"math"
 	"time"

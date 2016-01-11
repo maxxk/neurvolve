@@ -1,7 +1,7 @@
 package neurvolve
 
 import (
-	ng "github.com/tleyden/neurgo"
+	ng "github.com/maxxk/neurgo"
 )
 
 // The idea behind a "scape", aka "simulation landscape", is that

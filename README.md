@@ -1,15 +1,17 @@
 
 # Neurvolve
 
+Original repo: https://github.com/tleyden/neurvolve
+
 [![Build Status](https://drone.io/github.com/tleyden/neurvolve/status.png)](https://drone.io/github.com/tleyden/neurvolve/latest)
 
 Evolution-based training for [neurgo](https://github.com/tleyden/neurgo), a neural network framework in Go.
 
 # Status
 
-* Learning via Stochastic Hill Climbing works 
+* Learning via Stochastic Hill Climbing works
 * Topological mutatation operators implemented
-* Example which evolves a network capable of solving XOR 
+* Example which evolves a network capable of solving XOR
 
 # Running Examples
 

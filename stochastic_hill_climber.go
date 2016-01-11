@@ -2,7 +2,7 @@ package neurvolve
 
 import (
 	"github.com/couchbaselabs/logg"
-	ng "github.com/tleyden/neurgo"
+	ng "github.com/maxxk/neurgo"
 	"math"
 	"math/rand"
 )

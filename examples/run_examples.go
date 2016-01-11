@@ -3,7 +3,7 @@ package main
 import (
 	_ "expvar"
 	"github.com/couchbaselabs/logg"
-	ng "github.com/tleyden/neurgo"
+	ng "github.com/maxxk/neurgo"
 	"net/http"
 )
 
