@@ -3,6 +3,7 @@ package neurvolve
 import (
 	"fmt"
 	ng "github.com/maxxk/neurgo"
+	"math"
 )
 
 // A Cortex along with other data
@@ -20,7 +21,7 @@ func (fca EvaluatedCortexes) Len() int {
 }
 
 func (fca EvaluatedCortexes) Less(i, j int) bool {
-	return fca[i].Fitness > fca[j].Fitness
+	return (fca[i].Fitness > fca[j].Fitness) || (math.Abs(fca[i].Fitness - fca[j].Fitness) < 1e-12 && len(fca[i].Cortex.Neurons) < len(fca[j].Cortex.Neurons))
 }
 
 func (fca EvaluatedCortexes) Swap(i, j int) {

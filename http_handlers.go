@@ -10,7 +10,11 @@ import (
 	"time"
 )
 
-func RegisterHandlers(pt *PopulationTrainer) {
+type PopulationStore interface {
+	GetPopulationSnapshot() EvaluatedCortexes
+}
+
+func RegisterHandlers(pt PopulationStore) {
 
 	r := mux.NewRouter()
 
