@@ -130,8 +130,8 @@ func chooseNeuronsToPerturb(cortex *ng.Cortex) []*ng.Neuron {
 
 		probability := nodePerturbProbability(cortex)
 		neurons := cortex.Neurons
-		for _, neuronNode := range neurons {
-			if rand.Float64() < probability {
+		for i, neuronNode := range neurons {
+			if rand.Float64() < probability*float64(i) {
 				neuronsToPerturb = append(neuronsToPerturb, neuronNode)
 				didChooseNeuron = true
 			}
@@ -148,8 +148,8 @@ func chooseNeuronsToPerturb(cortex *ng.Cortex) []*ng.Neuron {
 
 func nodePerturbProbability(cortex *ng.Cortex) float64 {
 	neurons := cortex.Neurons
-	numNeurons := len(neurons)
-	return 1 / math.Sqrt(float64(numNeurons))
+	numNeurons := float64(len(neurons))
+	return 1 / math.Sqrt(numNeurons) / numNeurons
 }
 
 func perturbNeuron(neuron *ng.Neuron, saturationBounds []float64) {
