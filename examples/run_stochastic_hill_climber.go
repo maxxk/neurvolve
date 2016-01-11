@@ -29,7 +29,7 @@ func RunStochasticHillClimber() {
 		MaxAttempts:                2000,
 		WeightSaturationRange:      []float64{-100 * math.Pi, 100 * math.Pi},
 	}
-	cortexTrained, succeeded := shc.TrainExamples(cortex, examples)
+	cortexTrained, _, succeeded := shc.TrainExamples(cortex, examples)
 	if !succeeded {
 		panic("could not train neural net")
 	}

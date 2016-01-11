@@ -43,7 +43,7 @@ func RunPopulationTrainer(pt *nv.PopulationTrainer) bool {
 	population := getInitialPopulation()
 	scape := getScape()
 
-	fitPopulation, succeeded := pt.Train(population, scape)
+	fitPopulation, succeeded := pt.Train(population, scape, nv.NewNullRecorder())
 
 	if succeeded {
 		logg.LogTo("MAIN", "Successfully trained!")
