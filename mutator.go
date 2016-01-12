@@ -647,19 +647,12 @@ func TopologyOrWeightMutator(cortex *ng.Cortex) (success bool, result MutateResu
 
 	randomNumber := ng.RandomIntInRange(0, 100)
 	didMutate := false
-	// 1% — recurrent
-	// 20% — bell curve
-	// 38% — non-recurrent
-	// 40% — non-topological
 	var mutators []CortexMutator
-	if randomNumber > 98 {
-		// apply topological mutation
-		includeNonTopological := false
-		mutators = CortexMutatorsRecurrent(includeNonTopological)
-		logg.LogTo("DXNN", "Recurrent mutation!")
-	} else if randomNumber > 78 {
+	if randomNumber > 90 {
+		mutators = []CortexMutator{MutateActivation}
+	} else if randomNumber > 80 {
 		mutators = []CortexMutator{MutateAllWeightsBellCurve}
-	} else if randomNumber > 39 {
+	} else if randomNumber > 20 {
 		// apply topological mutation
 		includeNonTopological := false
 		mutators = CortexMutatorsNonRecurrent(includeNonTopological)
